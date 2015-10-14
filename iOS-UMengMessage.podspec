@@ -26,6 +26,8 @@ Pod::Spec.new do |s|
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
   友盟消息推送SDK无IDFA版
+  1.2.0 主要更新：
+     兼容iOS 9
                    DESC
 
   s.homepage     = "http://dev.umeng.com/push/ios/integration"
@@ -92,10 +94,10 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  # s.source_files  = "UMessage_Sdk_1.2.0/UMessage.h"
+  s.source_files  = "UMessage_Sdk_1.2.0/*.{h,m}"
   # s.exclude_files = ""
 
-  s.public_header_files = "UMessage_Sdk_1.2.0/UMessage.h"
+  s.public_header_files = "UMessage_Sdk_1.2.0/*.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
