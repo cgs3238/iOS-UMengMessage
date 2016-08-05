@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "iOS-UMengMessage"
-  s.version      = "1.2.5"
+  s.version      = "1.3.0"
   s.summary      = "友盟消息推送SDK无IDFA版"
 
   # This description is used to generate tags and improve search results.
@@ -26,13 +26,15 @@ Pod::Spec.new do |s|
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
   友盟消息推送SDK无IDFA版
-  1.2.5 主要更新：
+  1.3.0 主要更新：
+    改变1.2.7版本中初始化后直接往苹果注册devicetoken的逻辑。
+    新增registerForRemoteNotifications方法统一管理往苹果注册devicetoken。
+    去除1.2.7版本中加入的utdid.framework。
+    支持IPv6。
+  1.2.7 主要更新：
+    SDK可自动捕获注册、错误等行为。
+  1.2.6 主要更新：
     添加tag数量上限从64个提高到1024个。
-  1.2.3 主要更新：
-    更新了日志发送策略
-  1.2.2 主要更新：
-    新增setalias接口，使用的时候可以移除该alias绑定的历史设备。
-    新增SetUniqueID接口，允许用户以自定义的唯一标记来替换友盟SDK中目前使用的OpenUDID的方案。
                    DESC
 
   s.homepage     = "http://dev.umeng.com/push/ios/integration"
@@ -99,10 +101,10 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "UMessage_Sdk_1.2.5/*.{h,m}"
+  s.source_files  = "UMessage_Sdk_1.3.0/*.{h,m}"
   # s.exclude_files = ""
 
-  s.public_header_files = "UMessage_Sdk_1.2.5/*.h"
+  s.public_header_files = "UMessage_Sdk_1.3.0/*.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -116,7 +118,7 @@ Pod::Spec.new do |s|
   # s.resource  = "icon.png"
   # s.resources = "Resources/*.png"
 
-  s.preserve_paths = "UMessage_Sdk_1.2.5/libUMessage_Sdk_1.2.5.a"
+  s.preserve_paths = "UMessage_Sdk_1.3.0/libUMessage_Sdk_1.3.0.a"
 
 
   # ――― Project Linking ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -128,7 +130,7 @@ Pod::Spec.new do |s|
   # s.framework  = "SomeFramework"
   # s.frameworks = "SomeFramework", "AnotherFramework"
 
-  s.library   = "UMessage_Sdk_1.2.5"
+  s.library   = "UMessage_Sdk_1.3.0"
   # s.libraries = "iconv", "xml2"
 
 
@@ -140,7 +142,7 @@ Pod::Spec.new do |s|
 
   s.requires_arc = true
 
-  s.xcconfig = { "LIBRARY_SEARCH_PATHS" => "$(PODS_ROOT)/iOS-UMengMessage/UMessage_Sdk_1.2.5/" }
+  s.xcconfig = { "LIBRARY_SEARCH_PATHS" => "$(PODS_ROOT)/iOS-UMengMessage/UMessage_Sdk_1.3.0/" }
   # s.dependency "JSONKit", "~> 1.4"
 
 end
